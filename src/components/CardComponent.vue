@@ -1,66 +1,31 @@
 <template>
-  <div class="bg">
-    <v-card
-    class="mx-5 my-5"
-    max-width="350"
-    elevation-0
-
-  >
-    <v-img
-      height="200px"
-      src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
-      cover
-    ></v-img>
-
-    <v-card-title>
-      Top western road trips
-    </v-card-title>
-
-    <v-card-subtitle>
-      1,000 miles of wonder
-    </v-card-subtitle>
-
-    <v-card-actions>
-      <v-btn
-        color="orange-lighten-2"
-        variant="text"
-      >
-        Explore
-      </v-btn>
-
-      <v-spacer></v-spacer>
-
-      <v-btn
-        :icon="show ? 'mdi-chevron-up' : 'mdi-chevron-down'"
-        @click="show = !show"
-      ></v-btn>
-    </v-card-actions>
-
-    <v-expand-transition>
-      <div v-show="show">
-        <v-divider></v-divider>
-
-        <v-card-text>
-          I'm a thing. But, like most politicians, he promised more than he could deliver. You won't have time for sleeping, soldier, not with all the bed making you'll be doing. Then we'll go with that data file! Hey, you add a one and two zeros to that or we walk! You're going to do his laundry? I've got to find a way to escape.
-        </v-card-text>
-      </div>
-    </v-expand-transition>
-  </v-card>
-  </div>
-  
+  <router-link :to="'/product/' + product.id" tag="div" class="router-link">
+    <v-card class="mx-1 my-1" max-width="450" elevation-0>
+      <v-img height="200px" :src="'assets/images/' + product.image_url" cover></v-img>
+      <v-card-title>
+        {{ product.name }}
+      </v-card-title>
+      <v-card-subtitle>
+        Rp. {{ product.price }}
+      </v-card-subtitle>
+    </v-card>
+  </router-link>
 </template>
 
 
 <script>
 
-    export default{
-        name: "CardComponent",
-    }
+export default {
+  name: "CardComponent",
+  props: ["product"],
+}
 
 
 </script>
 
 <style scoped>
-
-
+.router-link {
+  text-decoration: none;
+  color: inherit; /* Sesuaikan dengan warna teks yang diinginkan */
+}
 </style>
