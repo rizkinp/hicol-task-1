@@ -9,7 +9,10 @@
         </div>
 
         <div class="col d-flex align-items-center justify-content-end">
-          <p><img class="large-image" :src="require('@/assets/produk.jpg')" alt="Product Image" /></p>
+          <div class="gambar">
+            <p><img class="large-image" src="../assets/hero.jpg" alt="Product Image" /></p>
+            <button class="under-img">Learn More</button>
+          </div>
         </div>
       </div>
     </div>
@@ -42,7 +45,6 @@ export default {
 .large-image {
   max-width: 85%;
   height: auto;
-  margin-left: 20px;
 }
 
 .row .col.text-center .header-text {
@@ -57,7 +59,8 @@ export default {
 }
 
 .learn-more-btn {
-  margin-top: 5px; /* Sesuaikan dengan kebutuhan */
+  margin-top: 5px;
+  /* Sesuaikan dengan kebutuhan */
   padding: 10px 20px;
   font-size: 14px;
   background-color: #ed410c;
@@ -70,5 +73,40 @@ export default {
 
 .learn-more-btn:hover {
   background-color: #ed410c;
+}
+
+.under-img {
+  display: none;
+  margin-top: 5px;
+  /* Sesuaikan dengan kebutuhan */
+  padding: 10px 20px;
+  font-size: 14px;
+  background-color: #ed410c;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+@media only screen and (max-width: 600px) {
+  .v-btn {
+    width: 100%;
+    /* Menetapkan lebar tombol menjadi 100% dari lebar parent */
+    max-width: 320px;
+    /* Batasi lebar maksimum tombol */
+  }
+
+  .row {
+    display: grid;
+  }
+
+  .under-img {
+    display: inline;
+  }
+
+  .learn-more-btn {
+    display: none;
+  }
 }
 </style>

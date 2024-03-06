@@ -12,13 +12,19 @@ export default {
 </script>
 
 <style scoped>
-
 .container {
   display: flex;
-  justify-content: space-between; /* Mengatur ruang antara elemen menjadi merata */
+  justify-content: space-between;
   margin-left: 100px;
   margin-right: 100px;
 }
 
-/* Add your additional styles as needed */
+@media screen and (max-width: 990px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+  }
+}
 </style>
