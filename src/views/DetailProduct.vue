@@ -37,7 +37,7 @@
                             </v-card-actions>
 
                             <v-card-subtitle :style="{ fontSize: '24px', color: '#ED3237' }" class="mb-2">
-                                Rp. {{ products.price }}
+                                {{ formatPrice(products.price) }}
                             </v-card-subtitle>
 
                             <v-col cols="auto">
@@ -115,13 +115,21 @@ export default {
             // Memperbarui nilai isWideScreen saat ukuran layar berubah
             this.isWideScreen = window.innerWidth >= 990;
         },
+        formatPrice(price) {
+            return price.toLocaleString('id-ID', {
+                style: 'currency',
+                currency: 'IDR',
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0, 
+            });
+        },
     },
     mounted() {
         this.fetchProductData();
-            // Menambahkan event listener untuk merespon perubahan ukuran layar
-    window.addEventListener("resize", this.handleResize);
-    // Memastikan isWideScreen diatur dengan benar saat halaman dimuat
-    this.handleResize();
+        // Menambahkan event listener untuk merespon perubahan ukuran layar
+        window.addEventListener("resize", this.handleResize);
+        // Memastikan isWideScreen diatur dengan benar saat halaman dimuat
+        this.handleResize();
     }
 };
 </script>

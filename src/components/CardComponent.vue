@@ -1,6 +1,6 @@
 <template>
   <router-link :to="'/product/' + product.id" tag="div" class="router-link">
-    <v-card class="mx-1 my-1" max-width="450" elevation-0>
+    <v-card class="mx-1 my-1" max-width="650" elevation-0>
       <v-img height="200px" :src="'assets/images/' + product.image_url" cover></v-img>
       <v-card-title>
         {{ product.name }}
